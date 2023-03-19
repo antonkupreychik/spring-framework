@@ -1,0 +1,62 @@
+2023-03-17T21:34:21.135+03:00  INFO 27024 --- [main] c.j.c.l.ServingWebContentApplication     : Starting ServingWebContentApplication using Java 17.0.6 with PID 27024 (/Users/antonkupreychik/IdeaProjects/spring-framework/build/classes/java/main started by antonkupreychik in /Users/antonkupreychik/IdeaProjects/spring-framework)
+2023-03-17T21:34:21.137+03:00  INFO 27024 --- [main] c.j.c.l.ServingWebContentApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-03-17T21:34:21.434+03:00  INFO 27024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-17T21:34:21.455+03:00  INFO 27024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+2023-03-17T21:34:21.870+03:00  INFO 27024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-17T21:34:21.875+03:00  INFO 27024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17T21:34:21.875+03:00  INFO 27024 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-03-17T21:34:21.917+03:00  INFO 27024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17T21:34:21.918+03:00  INFO 27024 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 759 ms
+2023-03-17T21:34:22.018+03:00  INFO 27024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17T21:34:22.067+03:00  INFO 27024 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@58687fb7
+2023-03-17T21:34:22.068+03:00  INFO 27024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17T21:34:22.088+03:00  INFO 27024 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-17T21:34:22.112+03:00  INFO 27024 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-03-17T21:34:22.263+03:00  INFO 27024 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-03-17T21:34:22.627+03:00  INFO 27024 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-17T21:34:22.631+03:00  INFO 27024 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-17T21:34:22.787+03:00  WARN 27024 --- [main] JpaBaseConfiguration$JpabWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-17T21:34:22.861+03:00  INFO 27024 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-03-17T21:34:23.048+03:00  INFO 27024 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-03-17T21:34:23.093+03:00  INFO 27024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-17T21:34:23.102+03:00  INFO 27024 --- [main] c.j.c.l.ServingWebContentApplication     : Started ServingWebContentApplication in 2.161 seconds (process running for 2.437)
+2023-03-17T21:34:23.412+03:00  INFO 27024 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17T21:34:23.413+03:00  INFO 27024 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17T21:34:23.413+03:00  INFO 27024 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-03-17T21:34:55.209+03:00  INFO 27024 --- [http-nio-8080-exec-1] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:34:57.651+03:00  INFO 27024 --- [http-nio-8080-exec-1] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:34:59.349+03:00  INFO 27024 --- [http-nio-8080-exec-2] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:34:59.350+03:00  INFO 27024 --- [http-nio-8080-exec-2] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:34:59.578+03:00  INFO 27024 --- [http-nio-8080-exec-3] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:34:59.579+03:00  INFO 27024 --- [http-nio-8080-exec-3] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:34:59.745+03:00  INFO 27024 --- [http-nio-8080-exec-4] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:34:59.746+03:00  INFO 27024 --- [http-nio-8080-exec-4] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:34:59.913+03:00  INFO 27024 --- [http-nio-8080-exec-5] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:34:59.914+03:00  INFO 27024 --- [http-nio-8080-exec-5] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:00.062+03:00  INFO 27024 --- [http-nio-8080-exec-6] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:00.063+03:00  INFO 27024 --- [http-nio-8080-exec-6] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:00.245+03:00  INFO 27024 --- [http-nio-8080-exec-7] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:00.246+03:00  INFO 27024 --- [http-nio-8080-exec-7] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:00.417+03:00  INFO 27024 --- [http-nio-8080-exec-8] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:00.423+03:00  INFO 27024 --- [http-nio-8080-exec-8] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:00.599+03:00  INFO 27024 --- [http-nio-8080-exec-9] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:00.606+03:00  INFO 27024 --- [http-nio-8080-exec-9] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:00.769+03:00  INFO 27024 --- [http-nio-8080-exec-10] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:00.770+03:00  INFO 27024 --- [http-nio-8080-exec-10] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:00.965+03:00  INFO 27024 --- [http-nio-8080-exec-1] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:00.966+03:00  INFO 27024 --- [http-nio-8080-exec-1] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:01.139+03:00  INFO 27024 --- [http-nio-8080-exec-2] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:01.140+03:00  INFO 27024 --- [http-nio-8080-exec-2] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:01.320+03:00  INFO 27024 --- [http-nio-8080-exec-3] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:01.321+03:00  INFO 27024 --- [http-nio-8080-exec-3] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:01.501+03:00  INFO 27024 --- [http-nio-8080-exec-4] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:01.502+03:00  INFO 27024 --- [http-nio-8080-exec-4] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:01.669+03:00  INFO 27024 --- [http-nio-8080-exec-5] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:01.670+03:00  INFO 27024 --- [http-nio-8080-exec-5] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:01.903+03:00  INFO 27024 --- [http-nio-8080-exec-6] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:01.905+03:00  INFO 27024 --- [http-nio-8080-exec-6] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:35:02.076+03:00  INFO 27024 --- [http-nio-8080-exec-7] c.j.c.l.controller.GreetingController    : 1A95EC1FFB018ADC0503C52281804114
+2023-03-17T21:35:02.076+03:00  INFO 27024 --- [http-nio-8080-exec-7] c.j.c.l.listener.event.EntityListener    : Delete entity event: com.javarush.context.lesson9.listener.event.EntityEvent[source=UserDTO[id=1, name=Anton, email=email@email.com]]
+2023-03-17T21:38:57.343+03:00  INFO 27024 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-17T21:38:57.345+03:00  INFO 27024 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17T21:38:57.346+03:00  INFO 27024 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

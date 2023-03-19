@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
@@ -17,6 +18,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.sql.DataSource;
 
@@ -33,6 +35,7 @@ public class DataConfig {
     private final String PROPERTY_PASSWORD = "password";
     private final String PROPERTY_SHOW_SQL = "hibernate.show_sql";
     private final String PROPERTY_DIALECT = "hibernate.dialect";
+    private final String PROPERTY_TEST_URL = "test.url";
 
     @Autowired
     Environment environment;
@@ -52,9 +55,21 @@ public class DataConfig {
     }
 
     @Bean
+    @Profile("!test")
     DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setUrl(environment.getProperty(PROPERTY_URL));
+        ds.setUsername(environment.getProperty(PROPERTY_USERNAME));
+        ds.setPassword(environment.getProperty(PROPERTY_PASSWORD));
+        ds.setDriverClassName(environment.getProperty(PROPERTY_DRIVER));
+        return ds;
+    }
+
+    @Bean("dataSource")
+    @Profile("test")
+    DataSource dataTestSource() {
+        DriverManagerDataSource ds = new DriverManagerDataSource();
+        ds.setUrl(environment.getProperty(PROPERTY_TEST_URL));
         ds.setUsername(environment.getProperty(PROPERTY_USERNAME));
         ds.setPassword(environment.getProperty(PROPERTY_PASSWORD));
         ds.setDriverClassName(environment.getProperty(PROPERTY_DRIVER));
@@ -82,7 +97,7 @@ public class DataConfig {
 
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "update");
+        properties.setProperty("hibernate.hbm2ddl.auto", "create");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 
         return properties;

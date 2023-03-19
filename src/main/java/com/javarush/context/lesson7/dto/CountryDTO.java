@@ -1,12 +1,12 @@
 package com.javarush.context.lesson7.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Getter
+@NoArgsConstructor
 public class CountryDTO {
     private Long id;
     private String nameRu;

@@ -1,5 +1,6 @@
 package com.javarush.context.lesson7.mapper;
 
+import com.javarush.context.lesson7.command.CountryCommand;
 import com.javarush.context.lesson7.dto.CountryDTO;
 import com.javarush.context.lesson7.model.Country;
 import org.mapstruct.Mapper;
@@ -8,4 +9,6 @@ import org.mapstruct.Mapper;
 public interface CountryMapper {
 
     CountryDTO mapToDTO(Country country);
+
+    Country mapToEntity(CountryCommand countryCommand);
 }

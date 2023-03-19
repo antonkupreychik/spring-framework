@@ -1,10 +1,15 @@
 package com.javarush.context.lesson9.controller;
 
 import com.javarush.context.lesson5.dto.UserDTO;
+import com.javarush.context.lesson9.listener.event.AccessType;
+import com.javarush.context.lesson9.listener.event.EntityEvent;
 import com.javarush.context.lesson9.repository.CountryRepository;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,15 +24,21 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 
+@Slf4j
 @Controller
 @SessionAttributes(value = "user")
+@RequiredArgsConstructor
 public class GreetingController {
 
+    private final ApplicationEventPublisher publisher;
 
     @GetMapping("/hello")
     public ModelAndView hello(ModelAndView modelAndView, HttpServletRequest httpServletRequest) {
         modelAndView.setViewName("hello");
-        modelAndView.addObject("user", new UserDTO(1L, "Anton", "email@email.com"));
+        log.info("{}", httpServletRequest.getSession().getId());
+        var user = new UserDTO(1L, "Anton", "email@email.com");
+        modelAndView.addObject("user", user);
+        publisher.publishEvent(new EntityEvent(user, AccessType.DELETE));
         return modelAndView;
     }
 
